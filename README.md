@@ -12,20 +12,22 @@ Se utilizaron notebooks en Jupyter, uno para funciones reutilizables y otro como
 ## Estructura del proyecto
 
 El proyecto está organizado en las siguientes carpetas y archivos:
-
+```text
 ├── work/
-│ ├── SMS_Facturacion_Funciones.py            -->     Notebook con funciones reutilizables.
-│ └── SMS_Facturacion_Ejecutor.ipynb          -->     Notebook que ejecuta el flujo completo.
-│ └── SMS_Facturacion_Exploracion.ipynb       -->     Notebook que contiene una breve exploracion y validaciones.
+│   ├── SMS_Facturacion_Funciones.py            --> Notebook con funciones reutilizables.
+│   ├── SMS_Facturacion_Ejecutor.ipynb          --> Notebook que ejecuta el flujo completo.
+│   └── SMS_Facturacion_Exploracion.ipynb       --> Notebook que contiene una breve exploración y validaciones.
 ├── data_in/
-│ ├── events.csv.gz                           -->     Dataset principal con eventos de comunicación.
-│ └── free_sms_destinations.csv.gz            -->     Lista de destinos gratuitos para SMS.
+│   ├── events.csv.gz                           --> Dataset principal con eventos de comunicación.
+│   └── free_sms_destinations.csv.gz            --> Lista de destinos gratuitos para SMS.
 ├── data_out/
-│ ├── top_usuarios_sms/                       -->     Dataset en formato Parquet con los 100 usuarios top.
-│ └── histograma_llamadas.png                 -->     Imagen del histograma de llamadas por hora.
-├── README.md                                 -->     Documentación del proyecto.
-└── docker-compose.yml                        -->     Configuración del entorno Docker.
-└── Respuestas_GranData                       -->     Contiene las respuestas al cuestionario dado.
+│   ├── top_usuarios_sms/                       --> Dataset en formato Parquet con los 100 usuarios top.
+│   └── histograma_llamadas.png                 --> Imagen del histograma de llamadas por hora.
+├── README.md                                   --> Documentación del proyecto.
+├── docker-compose.yml                          --> Configuración del entorno Docker.
+└── Respuestas_GranData                         --> Contiene las respuestas al cuestionario dado.
+```
+
 ## Paso a paso del proyecto
 
 1. **Carga de datos**  
@@ -48,10 +50,18 @@ El proyecto está organizado en las siguientes carpetas y archivos:
 
 ## Instrucciones de ejecución
 
-1. Levantar el entorno Docker con Spark ejecutando en terminal:
+1. Clonar el repositorio
+   Primero, cloná el repositorio de GitHub en tu máquina local:
+   
+```bash
+git clone https://github.com/FedericoZeballo/Ejercicio_SMS_y_Llamadas_Spark.git
+cd Ejercicio_SMS_y_Llamadas_Spark
+   ```
 
+2. Levantar el entorno Docker con Spark ejecutando en terminal:
+ ```bash  
     docker-compose up -d
-
-2. Ejecutar el notebook ejecutor:
+ ```
+3. Ejecutar el notebook ejecutor:
 
       SMS_Facturacion_Ejecutor.ipynb
